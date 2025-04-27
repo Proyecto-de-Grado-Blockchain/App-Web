@@ -198,7 +198,7 @@ export const CasosActivos = () => {
               <tbody>
                 {casos.map((caso, index) => (
                   <tr key={index}>
-                    <td>{caso.id}</td>
+                    <td>{caso.numeroCaso}</td>
                     <td>{caso.nombrePaciente}</td>
                     <td>{caso.fechaCreacion}</td>
                     <td>{caso.estado}</td>
@@ -207,7 +207,7 @@ export const CasosActivos = () => {
                       <Link to="/detalle-casos">
                         <button
                           className="VerDetalle"
-                          onClick={() => handleVerDetalle(caso.id)}
+                          onClick={() => handleVerDetalle(caso.numeroCaso)}
                         >
                           Ver Detalle
                         </button>
