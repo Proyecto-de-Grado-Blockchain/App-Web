@@ -129,11 +129,13 @@ export const CrearCaso = () => {
         <button onClick={handleSubmit} className="btn-crearCaso">
           Crear Caso
         </button>
+        {/*
         <Link to="/agregar-documentos" className="nav-link">
           <button type="button" className="btn-crearCaso">
             Agregar documentos al caso
           </button>
         </Link>
+        */}
       </div>
       <br />
       <br />

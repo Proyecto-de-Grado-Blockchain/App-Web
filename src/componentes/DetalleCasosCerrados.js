@@ -126,7 +126,7 @@ export const DetalleCasosCerrados = () => {
                   </th>
                 </tr>
                 <tr>
-                  <td style={{ padding: "5px" }}>{caso.id}</td>
+                  <td style={{ padding: "5px" }}>{caso.idCaso}</td>
                   <td style={{ padding: "5px" }}>{caso.nombrePaciente}</td>
                   <td style={{ padding: "5px" }}>{caso.fechaCreacion}</td>
                 </tr>

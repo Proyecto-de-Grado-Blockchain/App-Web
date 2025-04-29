@@ -118,9 +118,11 @@ const Franja = ({ onLogout }) => {
             </button>
             {actionMenuOpen && (
               <div className="action-dropdown">
+                {/*
                 <Link to="/crear-usuario" className="nav-link">
                   <button className="btn btn-light">Crear Usuario</button>
                 </Link>
+                */}
                 <Link to="/crear-caso" className="nav-link">
                   <button className="btn btn-light">Crear Caso</button>
                 </Link>

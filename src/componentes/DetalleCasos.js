@@ -241,7 +241,7 @@ export const DetalleCasos = () => {
                   </th>
                 </tr>
                 <tr>
-                  <td style={{ padding: "5px" }}>{caso.numeroCaso}</td>
+                  <td style={{ padding: "5px" }}>{caso.idCaso}</td>
                   <td style={{ padding: "5px" }}>{caso.nombrePaciente}</td>
                   <td style={{ padding: "5px" }}>{caso.fechaCreacion}</td>
                 </tr>

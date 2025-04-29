@@ -100,9 +100,9 @@ export const DocumentosExistentes = () => {
           </thead>
           <tbody>
             <tr>
-              <td>{caso.id}</td>
+              <td>{caso.idCaso}</td>
               <td>{caso.nombrePaciente}</td>
-              <td>{caso.usuarioResponsable}</td>
+              <td>{caso.idUsuario}</td>
             </tr>
           </tbody>
         </table>

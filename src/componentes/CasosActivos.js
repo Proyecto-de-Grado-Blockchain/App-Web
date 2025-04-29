@@ -146,7 +146,7 @@ export const CasosActivos = () => {
             </div>
             {menu2Open && (
               <div className="dropdown-menu">
-                <button onClick={() => handleSelectOption("Nombre", 2)}>
+                <button onClick={() => handleSelectOption("Nombre paciente", 2)}>
                   Nombre
                 </button>
                 <button onClick={() => handleSelectOption("Número de caso", 2)}>
@@ -198,7 +198,7 @@ export const CasosActivos = () => {
               <tbody>
                 {casos.map((caso, index) => (
                   <tr key={index}>
-                    <td>{caso.numeroCaso}</td>
+                    <td>{caso.idCaso}</td>
                     <td>{caso.nombrePaciente}</td>
                     <td>{caso.fechaCreacion}</td>
                     <td>{caso.estado}</td>
@@ -207,7 +207,7 @@ export const CasosActivos = () => {
                       <Link to="/detalle-casos">
                         <button
                           className="VerDetalle"
-                          onClick={() => handleVerDetalle(caso.numeroCaso)}
+                          onClick={() => handleVerDetalle(caso.idCaso)}
                         >
                           Ver Detalle
                         </button>
