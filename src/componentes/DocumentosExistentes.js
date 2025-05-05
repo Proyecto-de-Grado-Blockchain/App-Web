@@ -47,7 +47,7 @@ export const DocumentosExistentes = () => {
           return response.json();
         })
         .then((data) => {
-          setCasos(data["transactionResponse"]);
+          setCasos(data["transactionResponse"][0]);
         })
         .catch((error) => {
           console.error("Error en la solicitud:", error);

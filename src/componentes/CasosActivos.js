@@ -64,6 +64,7 @@ export const CasosActivos = () => {
         // Convertimos el objeto a JSON
         seleccion2: selectedOption2,
         entrada2: inputValue2,
+        userId: idUsuario
       }),
     })
       .then((response) => {
@@ -74,8 +75,7 @@ export const CasosActivos = () => {
         return response.json(); // Devuelve una promesa que se resuelve a JSON
       })
       .then((data) => {
-        console.log(Array.isArray(data));
-        setCasos(data);
+        setCasos(data["transactionResponse"]);
         setShowReloadButton(true);
       })
       .catch((error) => {
@@ -154,9 +154,6 @@ export const CasosActivos = () => {
                 </button>
                 <button onClick={() => handleSelectOption("Fecha", 2)}>
                   Fecha
-                </button>
-                <button onClick={() => handleSelectOption("Médico Forense", 2)}>
-                  Médico Forense
                 </button>
               </div>
             )}

@@ -66,6 +66,7 @@ export const CasosCerrados = () => {
         // Convertimos el objeto a JSON
         seleccion2: selectedOption2,
         entrada2: inputValue2,
+        userId: idUsuario
       }),
     })
       .then((response) => {
@@ -76,8 +77,7 @@ export const CasosCerrados = () => {
         return response.json(); // Devuelve una promesa que se resuelve a JSON
       })
       .then((data) => {
-        console.log(Array.isArray(data));
-        setCasos(data);
+        setCasos(data["transactionResponse"]);
         setShowReloadButton(true);
       })
       .catch((error) => {
@@ -107,8 +107,6 @@ export const CasosCerrados = () => {
       .catch((error) => {
         console.error("Error en la solicitud:", error);
       });
-
-    // Puedes ejecutar cualquier otra lógica aquí
   }, []);
 
   const handleVerDetalle = (numeroCaso) => {
@@ -154,17 +152,14 @@ export const CasosCerrados = () => {
             </div>
             {menu2Open && (
               <div className="dropdown-menu">
-                <button onClick={() => handleSelectOption("Nombre", 2)}>
+                <button onClick={() => handleSelectOption("Nombre paciente", 2)}>
                   Nombre
                 </button>
-                <button onClick={() => handleSelectOption("Identificación", 2)}>
-                  Identificación
+                <button onClick={() => handleSelectOption("Número de caso", 2)}>
+                  Número de caso
                 </button>
                 <button onClick={() => handleSelectOption("Fecha", 2)}>
                   Fecha
-                </button>
-                <button onClick={() => handleSelectOption("Médico Forense", 2)}>
-                  Médico Forense
                 </button>
               </div>
             )}
