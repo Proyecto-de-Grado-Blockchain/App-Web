@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Franja from "./Franja";
 import { Link } from "react-router-dom";
@@ -13,6 +13,13 @@ export const CrearCaso = () => {
   const dominio = "http://localhost:3100";
 
   const navigate = useNavigate();
+  
+  useEffect(() => {
+    if (useID === "3") {
+      navigate("/acceso-denegado");
+    }
+  }, [useID, navigate]);
+
   const dialogStyle = {
     position: "absolute",
     top: "50%",
@@ -56,6 +63,10 @@ export const CrearCaso = () => {
         }),
       })
         .then((response) => {
+          if (response.status === 403) {
+            window.location.href = "/acceso-denegado";
+            throw new Error("Acceso denegado");;
+          }
           if (!response.ok) {
             throw new Error("Error en la respuesta del servidor");
           }

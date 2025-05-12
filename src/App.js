@@ -12,6 +12,7 @@ import { CrearCaso } from './componentes/CrearCaso';
 import { AgregarDocumentos } from './componentes/AgregarDocumentos';
 import { CrearUsuario } from './componentes/CrearUsuario'
 import { GestionCaso } from './componentes/GestionCaso'
+import { AccesoDenegado } from './componentes/AccesoDenegado';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path="/agregar-documentos" element={<AgregarDocumentos/>} />
             <Route path="/crear-usuario" element={<CrearUsuario/>} />
             <Route path="/gestion-caso" element={<GestionCaso/>} />
+            <Route path="/acceso-denegado" element={<AccesoDenegado />} />
           </Routes>
         </header>
       </div>

@@ -18,6 +18,13 @@ export const CasosActivos = () => {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (idUsuario === "3") {
+      navigate("/acceso-denegado");
+    }
+  }, [idUsuario, navigate]);
+  
+
   const toggleMenu = (menu) => {
     if (menu === 2) {
       if (estadoMenuOpen) {
@@ -84,7 +91,7 @@ export const CasosActivos = () => {
   };
 
   useEffect(() => {
-    // Acción que quieres ejecutar cuando se cargue la página
+    // Acción que se ejecuta cuando se cargue la página
     fetch(`http://localhost:3100/casos/casos-activos?userId=${idUsuario}`, {
       method: "GET",
       headers: {
@@ -93,9 +100,16 @@ export const CasosActivos = () => {
     })
       .then((response) => {
         // Convertimos el objeto Response a JSON
+
+        if (response.status === 403) {
+          window.location.href = "/acceso-denegado";
+          return;
+        }
+        
         if (!response.ok) {
           throw new Error("Error en la respuesta del servidor");
         }
+        
         return response.json(); // Devuelve una promesa que se resuelve a JSON
       })
       .then((data) => {
